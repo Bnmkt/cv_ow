@@ -1,0 +1,909 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@font-face {
+  font-family: "Futura BdCn BT";
+  src: url("./fonts/FuturaBT-BoldCondensed.eot");
+  src: url("./fonts/FuturaBT-BoldCondensed.eot?#iefix") format("embedded-opentype"), url("./fonts/FuturaBT-BoldCondensed.woff") format("woff"), url("./fonts/FuturaBT-BoldCondensed.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Futura Md BT";
+  src: url("./fonts/FuturaBT-BoldItalic.eot");
+  src: url("./fonts/FuturaBT-BoldItalic.eot?#iefix") format("embedded-opentype"), url("./fonts/FuturaBT-BoldItalic.woff") format("woff"), url("./fonts/FuturaBT-BoldItalic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Futura Bk BT";
+  src: url("./fonts/FuturaBT-BookItalic.eot");
+  src: url("./fonts/FuturaBT-BookItalic.eot?#iefix") format("embedded-opentype"), url("./fonts/FuturaBT-BookItalic.woff") format("woff"), url("./fonts/FuturaBT-BookItalic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "BigNoodleTitling";
+  src: url("./fonts/BigNoodleTitling.eot");
+  src: url("./fonts/BigNoodleTitling.eot?#iefix") format("embedded-opentype"), url("./fonts/BigNoodleTitling.woff") format("woff"), url("./fonts/BigNoodleTitling.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Futura";
+  src: url("./fonts/Futura-Bold.eot");
+  src: url("./fonts/Futura-Bold.eot?#iefix") format("embedded-opentype"), url("./fonts/Futura-Bold.woff") format("woff"), url("./fonts/Futura-Bold.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "BigNoodleTitling";
+  src: url("./fonts/BigNoodleTitling-Oblique.eot");
+  src: url("./fonts/BigNoodleTitling-Oblique.eot?#iefix") format("embedded-opentype"), url("./fonts/BigNoodleTitling-Oblique.woff") format("woff"), url("./fonts/BigNoodleTitling-Oblique.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Futura Bk BT";
+  src: url("./fonts/FuturaBT-Book.eot");
+  src: url("./fonts/FuturaBT-Book.eot?#iefix") format("embedded-opentype"), url("./fonts/FuturaBT-Book.woff") format("woff"), url("./fonts/FuturaBT-Book.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Futura Bk BT";
+  src: url("./fonts/FuturaBT-700.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+.medias_element, .button, .socials_icon, #navigation_search, .ange .list li, .link {
+  transition: all 0.25s ease-in;
+}
+
+li {
+  display: block;
+}
+
+body {
+  background-color: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  font-family: "Futura Bk BT";
+  font-weight: lighter;
+}
+
+p, blockquote {
+  font-family: "Helvetica", "Arial";
+}
+
+.hidden {
+  max-height: 0px;
+  overflow: hidden;
+  position: absolute;
+}
+
+.header, .main, .footer {
+  position: relative;
+}
+
+.header {
+  min-height: 43.75vw;
+  display: flex;
+  flex-direction: column;
+}
+.header:after {
+  content: "";
+  position: absolute;
+  z-index: 1111;
+  background-image: url("divider_bottom.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  display: block;
+  bottom: -9px;
+  left: 0;
+  right: 0;
+  height: 30px;
+}
+
+.menu {
+  display: inline-block;
+}
+
+.link, .button, .link:hover, .link:active, .link:visited, .link:link {
+  text-transform: uppercase;
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  padding: 0.5em;
+}
+.link:hover, .button:hover {
+  color: white;
+}
+
+.navigation {
+  background: #0b0d12;
+  display: flex;
+  flex-direction: row;
+}
+
+.firstnav {
+  display: flex;
+  flex-direction: row;
+}
+
+.blizzard {
+  z-index: 99999;
+  background: #0b0d12;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0.3em;
+}
+.blizzard .logo {
+  margin-right: 1em;
+}
+.blizzard .navigation {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.overwatch {
+  z-index: 99999;
+  position: fixed;
+  top: 3em;
+  left: 0;
+  right: 0;
+  max-width: 1600px;
+  margin: 1em auto;
+}
+.overwatch .logo {
+  margin-right: 1em;
+}
+.overwatch .navigation {
+  font-family: "Arial";
+  font-weight: 600;
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 0.5em;
+}
+.overwatch .navigation .link:not(.button):hover, .overwatch .navigation .button:not(.button):hover {
+  color: orange;
+}
+
+.m_l_a {
+  margin-left: auto;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+}
+
+.ange {
+  margin-top: auto;
+  text-align: center;
+}
+.ange .title {
+  color: #f6f6f6;
+  background: -webkit-linear-gradient(#f6f6f6 50%, rgba(246, 246, 246, 0.25));
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 0.9;
+  font-size: 5em;
+}
+.ange_description {
+  color: #00c3ff;
+  font-family: "Futura Bk BT";
+  font-weight: 600;
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: 1.7em;
+}
+.ange .list {
+  display: flex;
+  justify-content: center;
+}
+.ange .list li {
+  margin: 2em 0.8em;
+  display: flex;
+  overflow: hidden;
+  width: 105px;
+  height: 105px;
+  background-color: rgba(62, 80, 113, 0.7);
+  border: 1px solid white;
+  border-radius: 50%;
+}
+.ange .list li:hover {
+  background-color: #3e5071;
+}
+.ange .list_link {
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  color: white;
+  font-family: "Futura Bk BT";
+  font-weight: bold;
+  font-size: 1.1em;
+}
+.ange .list_link img {
+  flex: 0 1 auto;
+  max-width: inherit;
+  height: auto;
+}
+.ange input[name=currSpell] {
+  display: none;
+}
+.ange input[name=currSpell]#inp_0:checked ~ .dynamic_bg .bg_0 {
+  display: flex;
+}
+.ange input[name=currSpell]#inp_1:checked ~ .dynamic_bg .bg_1 {
+  display: flex;
+}
+.ange input[name=currSpell]#inp_2:checked ~ .dynamic_bg .bg_2 {
+  display: flex;
+}
+.ange input[name=currSpell]#inp_3:checked ~ .dynamic_bg .bg_3 {
+  display: flex;
+}
+.ange input[name=currSpell]#inp_4:checked ~ .dynamic_bg .bg_4 {
+  display: flex;
+}
+.ange input[name=currSpell]#inp_5:checked ~ .dynamic_bg .bg_5 {
+  display: flex;
+}
+.ange .spellbg {
+  background-color: black;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  flex-direction: column;
+}
+.ange .spellbg img {
+  flex: 1;
+  width: auto;
+  max-width: 150%;
+  height: auto;
+  -webkit-filter: brightness(0.7);
+          filter: brightness(0.7);
+}
+
+.title {
+  font-size: 3em;
+  font-family: "BigNoodleTitling";
+  font-style: italic;
+}
+
+.navigation_bar {
+  display: flex;
+  flex-direction: row;
+}
+
+label[for=navigation_search] {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background-image: url("search_icon.png");
+  vertical-align: middle;
+}
+label[for=navigation_search]:hover {
+  background-position: -32px 0;
+}
+label[for=navigation_search] + #navigation_search:not(:focus) {
+  flex: 0;
+  max-width: 0;
+}
+
+#navigation_search {
+  background-color: transparent;
+  color: white;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  font-size: 1.1em;
+  border-right: 1px solid grey;
+  padding: 0.3em;
+  flex: 1;
+}
+#navigation_search::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+#navigation_search:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+#navigation_search::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+#navigation_search::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.socials_icon {
+  width: 75px;
+  height: 54px;
+  display: inline-block;
+  background-image: url("social_icons.png");
+  background-size: cover;
+  background-position: -146px 0;
+}
+.socials_icon:last-child {
+  width: 57px;
+}
+.socials_icon:hover {
+  cursor: pointer;
+  background-image: url("social_icons-hover.png");
+}
+.socials .facebook {
+  background-position-x: -73px;
+}
+.socials .youtube {
+  background-position-x: -220px;
+}
+.socials .instagram {
+  background-position-x: -292px;
+}
+
+.footer {
+  color: white;
+  background-color: #f0edf2;
+  text-align: center;
+  border-top: 4px solid #8b8b8b;
+}
+.footer .title {
+  font-size: 2em;
+}
+.footer .navigation {
+  background-color: transparent;
+  display: flex;
+  justify-content: space-around;
+}
+.footer_gray {
+  padding: 1em 0;
+  background-image: url("background.jpg");
+}
+.footer .links {
+  margin: 1em 0;
+}
+.footer .links li {
+  display: inline-block;
+}
+.footer .link, .footer .button {
+  color: black;
+}
+.footer .link:not(:first-child):before, .footer .button:not(:first-child):before, .footer li:not(:first-child) .link:before, .footer li:not(:first-child) .button:before {
+  content: "|";
+  margin-right: 1em;
+  color: #141414;
+  cursor: default;
+}
+.footer_notes {
+  font-size: 0.9em;
+}
+.footer_notes img {
+  margin: 1em 0;
+}
+
+.color-gray {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.button {
+  align-self: center;
+  display: inline-block;
+  padding: 0.4em 2em;
+  background-color: #ccc;
+}
+.button:not(label) {
+  border-radius: 3px;
+}
+.button.blue {
+  font-family: "Futura Bk BT";
+  font-weight: bold;
+  background-color: rgba(19, 42, 77, 0.85);
+  color: #b4bac8;
+}
+.button.orange {
+  font-family: "Futura Bk BT";
+  font-weight: bold;
+  background-color: #ff9c00;
+  color: white;
+}
+.button.orange:hover {
+  background-color: #ffab24;
+  color: white;
+}
+.button.connexion {
+  background-color: transparent;
+  color: gray;
+  margin: auto 0em;
+}
+
+.hero {
+  max-width: 730px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.hero_bio {
+  margin-top: 1em;
+}
+.hero_bio_quote {
+  font-size: 2em;
+  font-family: "BigNoodleTitling";
+  font-style: italic;
+  color: #00c3ff;
+}
+.hero_bio_bigtext {
+  margin-top: 18px;
+  padding: 22px;
+  background-color: rgba(19, 42, 77, 0.65);
+  line-height: 1.6;
+}
+.hero_bio_bigtext .paragraph {
+  margin-top: 0.6em;
+}
+.hero_info {
+  display: block;
+  margin-top: 0.6em;
+}
+.hero_info > div {
+  padding: 0.4em;
+  padding-left: 35px;
+  background-image: url("bio.png");
+  background-repeat: no-repeat;
+  background-size: 27px 120px;
+}
+.hero_occupation {
+  background-position-y: -30px;
+}
+.hero_location {
+  background-position-y: -60px;
+}
+.hero_affiliation {
+  background-position-y: -90px;
+}
+.hero .button {
+  font-size: 1.55em;
+  padding: 0.5em;
+  text-align: center;
+  min-width: 46%;
+}
+.hero_histoire {
+  position: relative;
+  padding: 1em;
+}
+.hero_histoire .title {
+  color: #00c3ff;
+  font-family: "Futura Bk BT";
+  font-weight: 600;
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: 1.7em;
+}
+.hero_generalites {
+  position: relative;
+  padding: 1em;
+}
+.hero_generalites .title {
+  color: #00c3ff;
+  font-family: "Futura Bk BT";
+  font-weight: 600;
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: 1.7em;
+}
+.hero_generalites .role_name {
+  font-family: "BigNoodleTitling";
+  font-style: italic;
+  font-size: 4em;
+  position: relative;
+  top: -0.2em;
+  left: -0.05em;
+}
+.hero_generalites .difficulty {
+  position: absolute;
+  right: 1em;
+  top: 1em;
+}
+.hero_generalites .role_quote {
+  border-left: 6px solid #00c3ff;
+  padding-left: 18px;
+  margin-left: 6px;
+  margin-top: 18px;
+  max-width: 90%;
+  line-height: 1.6;
+  position: relative;
+  top: -0.5em;
+}
+.hero_generalites .capacity {
+  margin-top: 1em;
+  padding-top: 1em;
+  border-top: 1px solid gray;
+}
+.hero_generalites .capacity .title {
+  margin-bottom: 1em;
+}
+.hero_generalites .capacity li {
+  overflow: hidden;
+  background-color: rgba(19, 42, 77, 0.2);
+  margin: 2px 0;
+}
+.hero_generalites .capacity li .img_container {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(19, 42, 77, 0.2);
+  min-width: 130px;
+  min-height: 120px;
+  max-width: 130px;
+  max-height: 120px;
+  margin-right: 0.5em;
+}
+.hero_generalites .capacity li .img_container img {
+  margin: auto;
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+}
+.hero_generalites .capacity li .left + .left {
+  padding: 1em;
+  max-width: calc(100% - 130px - 5em);
+  line-height: 1.6em;
+}
+.hero_generalites .capacity li .spell_name {
+  font-size: 1.2em;
+  font-style: normal;
+  font-weight: bold;
+  font-variant: normal;
+  line-height: normal;
+  text-transform: uppercase;
+  margin-bottom: 0.6em;
+  display: inline-block;
+}
+.hero_classname {
+  font-family: "Futura Bk BT";
+  font-weight: bold;
+  color: #fff;
+  opacity: 0.6;
+  font-size: 1.5em;
+  padding: 0 3px;
+  text-transform: uppercase;
+}
+.hero_other {
+  position: relative;
+  color: white;
+  background-color: #162222;
+  background-image: url("other_heros.jpg");
+  background-size: cover;
+  background-position: center bottom;
+}
+.hero_other:before {
+  content: "";
+  position: absolute;
+  z-index: 1111;
+  background-image: url("divider_top.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  display: block;
+  top: -9px;
+  left: 0;
+  right: 0;
+  height: 30px;
+}
+.hero_other .container {
+  display: flex;
+  flex-direction: column;
+  padding: 2.5em 0;
+}
+.hero_other .title {
+  text-align: center;
+  font-size: 4em;
+}
+.hero_other_container {
+  margin: auto;
+  text-align: center;
+  margin-top: 2em;
+}
+.hero_other_separator {
+  display: flex;
+  margin-bottom: 1em;
+}
+.hero_other_hero {
+  display: inline-block;
+  margin-bottom: 16px;
+}
+.hero_other_hero:hover .hero_other_hero_portrait {
+  width: 84px;
+  height: 100.8px;
+  margin: -6px -1px;
+  border-left-width: 3px;
+  border-right-width: 3px;
+  background-color: #ff9c00;
+}
+.hero_other_hero:hover .hero_other_hero_text {
+  display: inline;
+  position: relative;
+  z-index: 1111;
+  border-radius: 0.3rem;
+  background-color: #f6f6f6;
+  color: #333;
+  padding: 0.3em 0.8em;
+}
+.hero_other_hero_image {
+  max-width: 100%;
+  height: auto;
+}
+.hero_other_hero_portrait {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  width: 70px;
+  height: 84px;
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-top: 2.4px;
+  margin-bottom: 2.4px;
+  border: 3px solid #f6f6f6;
+  border-left-width: 0;
+  border-right-width: 0;
+  background-color: rgba(51, 51, 51, 0.9);
+  overflow: hidden;
+  border-radius: 7px;
+  -webkit-transform: skew(25rad);
+          transform: skew(25rad);
+}
+.hero_other_hero_text {
+  position: relative;
+  left: -0.35em;
+  display: inline-block;
+  padding: 1px 10px;
+  color: #f6f6f6;
+  text-align: center;
+}
+.hero_separator {
+  height: 0.1em;
+  background-color: rgba(102, 102, 102, 0.5);
+  flex: 1;
+  position: relative;
+  top: 0.9em;
+}
+
+.left {
+  float: left;
+}
+
+.star_on, .star_off {
+  display: inline-block;
+  width: 42px;
+  height: 42px;
+  background-image: url("star-85ced227029e950a4e59b71cd728e4241293fab3602704691d43a53add939a93e075cffb2bfe7a0af48d40c1615f574e26b12e50445305c06802b7318109c6e0.png");
+  background-size: cover;
+}
+
+.star_off {
+  background-position: 0 -42px;
+}
+
+.indice {
+  font-size: 1.2em;
+  position: relative;
+  top: -0.05em;
+  left: 0.12em;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.container {
+  padding: 5em 0;
+  max-width: 65%;
+  min-width: 1240px;
+  margin: 0 auto;
+}
+
+.media {
+  text-align: center;
+  box-sizing: border-box;
+}
+.media .title {
+  font-size: 4em;
+  margin-bottom: 0.3em;
+}
+.medias {
+  text-align: left;
+}
+.medias_element {
+  margin: 0.2em;
+  position: relative;
+  display: inline-block;
+  max-width: 300px;
+  max-height: 162.75px;
+  overflow: hidden;
+  box-shadow: 0 0 5px rgba(25, 25, 25, 0.4);
+}
+.medias_element img {
+  max-width: 100%;
+}
+.medias_element .link, .medias_element .button {
+  padding: 0;
+}
+.medias_element .media_text {
+  font-family: "Futura Bk BT";
+  font-weight: bold;
+  color: white;
+  background-color: rgba(25, 25, 25, 0.75);
+  position: absolute;
+  text-align: center;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.7em;
+}
+.medias_element:hover {
+  box-shadow: 0 0 5px rgba(25, 25, 25, 0.7);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  z-index: 1111;
+}
+.medias_element:hover .media_text {
+  background-color: rgba(25, 25, 25, 0.95);
+}
+
+#section_generalites, #section_histoire {
+  display: none;
+}
+#section_generalites:not(:checked) ~ div .hero .button:first-child {
+  color: #333333;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+#section_generalites:not(:checked) ~ div .hero .hero_generalites {
+  display: none;
+}
+#section_histoire:not(:checked) ~ div .hero .button + .button {
+  color: #333333;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+#section_histoire:not(:checked) ~ div .hero .hero_histoire {
+  display: none;
+}
+#section_generalites:checked ~ div .hero .hero_generalites {
+  display: block;
+  background-color: rgba(19, 42, 77, 0.85);
+  color: white;
+}
+#section_generalites:checked ~ .dynamic_bg {
+  background-image: url("background-general.png");
+  background-size: cover;
+  background-position: 75% top;
+}
+#section_histoire:checked ~ .dynamic_bg {
+  background-image: url("background-story.jpg");
+  background-size: cover;
+  background-position: 75% top;
+}
+#section_histoire:checked ~ div .hero .hero_histoire {
+  display: block;
+  background-color: rgba(19, 42, 77, 0.85);
+  color: white;
+}
+
+@media screen and (max-width: 1240px) {
+  .blizzard {
+    display: none;
+  }
+
+  .ange .dynamic_bg, .ange_description, .ange .list {
+    display: none;
+  }
+
+  .header {
+    background-color: black;
+    background-image: url("background-general.jpg");
+    background-size: cover;
+  }
+
+  .main .dynamic_bg .container {
+    margin: inherit;
+    padding: inherit;
+  }
+
+  .left {
+    float: none;
+  }
+
+  .hero {
+    max-width: 100vw;
+  }
+  .hero_generalites .capacity .spell {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .hero_generalites .capacity .spell .img_container {
+    max-width: 100%;
+  }
+  .hero_generalites .capacity .spell .left + .left {
+    max-width: inherit;
+  }
+
+  .container {
+    min-width: inherit;
+    max-width: 100vw;
+    overflow: hidden;
+  }
+
+  .overwatch {
+    display: none;
+  }
+  .overwatch .navigation, .overwatch .navigation_bar, .overwatch .navigation .secondnav {
+    display: flex;
+    flex-direction: column;
+  }
+  .overwatch .navigation .secondnav li {
+    display: flex;
+  }
+  .overwatch .navigation .secondnav li a {
+    flex: 1;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 0.8em;
+    margin: 0.2em 0;
+  }
+  .overwatch label[for=navigation_search] {
+    display: none;
+  }
+  .overwatch label[for=navigation_search] + #navigation_search:not(:focus) {
+    flex: 1;
+    max-width: 100%;
+  }
+  .overwatch .m_l_a {
+    margin-left: inherit;
+  }
+}

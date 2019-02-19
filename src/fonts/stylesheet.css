@@ -1,0 +1,70 @@
+@font-face {
+    font-family: 'Futura BdCn BT';
+    src: url('FuturaBT-BoldCondensed.eot');
+    src: url('FuturaBT-BoldCondensed.eot?#iefix') format('embedded-opentype'),
+        url('FuturaBT-BoldCondensed.woff') format('woff'),
+        url('FuturaBT-BoldCondensed.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Futura Md BT';
+    src: url('FuturaBT-BoldItalic.eot');
+    src: url('FuturaBT-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('FuturaBT-BoldItalic.woff') format('woff'),
+        url('FuturaBT-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Futura Bk BT';
+    src: url('FuturaBT-BookItalic.eot');
+    src: url('FuturaBT-BookItalic.eot?#iefix') format('embedded-opentype'),
+        url('FuturaBT-BookItalic.woff') format('woff'),
+        url('FuturaBT-BookItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'BigNoodleTitling';
+    src: url('BigNoodleTitling.eot');
+    src: url('BigNoodleTitling.eot?#iefix') format('embedded-opentype'),
+        url('BigNoodleTitling.woff') format('woff'),
+        url('BigNoodleTitling.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Futura';
+    src: url('Futura-Bold.eot');
+    src: url('Futura-Bold.eot?#iefix') format('embedded-opentype'),
+        url('Futura-Bold.woff') format('woff'),
+        url('Futura-Bold.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BigNoodleTitling';
+    src: url('BigNoodleTitling-Oblique.eot');
+    src: url('BigNoodleTitling-Oblique.eot?#iefix') format('embedded-opentype'),
+        url('BigNoodleTitling-Oblique.woff') format('woff'),
+        url('BigNoodleTitling-Oblique.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Futura Bk BT';
+    src: url('FuturaBT-Book.eot');
+    src: url('FuturaBT-Book.eot?#iefix') format('embedded-opentype'),
+        url('FuturaBT-Book.woff') format('woff'),
+        url('FuturaBT-Book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+

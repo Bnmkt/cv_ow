@@ -1,0 +1,191 @@
+- var spells = [{"name":"html","desc":"Grâce à sa compétence en HTML, Sean peut définir la structure d'un site web en seulement quelques heures !"},{"name":"css","desc":"CSS est un outil puissant qui permet à Sean de rendre un site beau, cette compétence stun l'utilisateur pendant 2 secondes"},{"name":"js","desc":"Javascript est l'attaque ultime de Sean, elle rend les sites tellement dynamique que les utilisateurs sont confus pendant plusieurs tours !"},{"name":"php","desc": "PHP est une compétence passive qui permet d'effectuer des actions que l'utilisateur ne vera qu'au moment d'afficher une page"},{"name":"illustrator","desc":"Illustator est une seconde compétence passive qui soigne les alliés de Sean grâce à la puissance des formes vectorielles !"}]
+- var Medias = {"Aperçu du style de jeu d'ange":"https://d1u1mce87gyfbn.cloudfront.net/media/thumbnail/mercy-preview.jpg", "aNGE": "https://d1u1mce87gyfbn.cloudfront.net/media/thumbnail/mercy-theatrical.jpg", "Ange":"https://d1u1mce87gyfbn.cloudfront.net/media/thumbnail/mercy-screenshot-002.jpg", "aNge":"https://d1u1mce87gyfbn.cloudfront.net/media/thumbnail/mercy-screenshot-001.jpg", "anGe":"https://d1u1mce87gyfbn.cloudfront.net/media/thumbnail/mercy-cosplay.jpg", "angE":"https://d1u1mce87gyfbn.cloudfront.net/media/thumbnail/mercy-concept.jpg"}
+- var tank = {"hero_1":"https://d1u1mce87gyfbn.cloudfront.net/hero/wrecking-ball/icon-portrait.png", "hero_2":"https://d1u1mce87gyfbn.cloudfront.net/hero/roadhog/icon-portrait.png","hero_3":"https://d1u1mce87gyfbn.cloudfront.net/hero/dva/icon-portrait.png"}
+- var degats = {"hero_1":"https://d1u1mce87gyfbn.cloudfront.net/hero/wrecking-ball/icon-portrait.png", "hero_2":"https://d1u1mce87gyfbn.cloudfront.net/hero/roadhog/icon-portrait.png","hero_3":"https://d1u1mce87gyfbn.cloudfront.net/hero/dva/icon-portrait.png","hero_4":"https://d1u1mce87gyfbn.cloudfront.net/hero/genji/icon-portrait.png"}
+- var soutien = {"hero_1":"https://d1u1mce87gyfbn.cloudfront.net/hero/wrecking-ball/icon-portrait.png", "hero_2":"https://d1u1mce87gyfbn.cloudfront.net/hero/roadhog/icon-portrait.png","hero_3":"https://d1u1mce87gyfbn.cloudfront.net/hero/dva/icon-portrait.png","hero_4":"https://d1u1mce87gyfbn.cloudfront.net/hero/mercy/icon-portrait.png", "hero_5":"https://d1u1mce87gyfbn.cloudfront.net/hero/lucio/icon-portrait.png","hero_6":"https://d1u1mce87gyfbn.cloudfront.net/hero/zenyatta/icon-portrait.png"}
+- var Classes = {"tank":tank, "dégats":degats, "soutien":soutien}
+doctype
+html
+    head
+        title Mon CV
+        link(rel="stylesheet", href="app.css")
+        meta(http-equiv="Content-Type", content="text/html;charset=UTF-8")
+    body
+        h1.hidden="Sean Ferrara"
+        header.header
+            .blizzard
+                nav.navigation
+                    img.picture.logo(src="bliz.png", alt="Logo Blizzard", width="60", height="30")
+                    ul.firstnav.menu
+                        li
+                            a.menu_element.link(href="#")="Jeux"
+                        li
+                            a.menu_element.link(href="#")="Boutique"
+                        li
+                            a.menu_element.link(href="#")="Actualités"
+                        li
+                            a.menu_element.link(href="#")="Esport"
+                    ul.menu.m_l_a
+                        li
+                            a.menu_element.link(href="#")="Assistance"
+                        li
+                            a.menu_element.link(href="#")="Mon Compte"
+            .overwatch
+                nav.navigation
+                    img.picture.logo(src="overwatch.png", alt="Logo Overwatch", width="200", height="36")
+                    ul.secondnav.menu
+                        li
+                            a.menu_element.link(href="#")="Jeu"
+                        li
+                            a.menu_element.link(href="#")="Héros"
+                        li
+                            a.menu_element.link(href="#")="Évenements"
+                        li
+                            a.menu_element.link(href="#")="Médias"
+                        li
+                            a.menu_element.link(href="#")="Actualités"
+                        li
+                            a.menu_element.link(href="#")="Esport"
+                        li
+                            a.menu_element.link(href="#")="Communauté"
+                    .navigation_bar.m_l_a
+                        label(for="navigation_search")
+                            
+                        input(type="search", id="navigation_search", title="Chercher la fiche d'un Héro", placeholder="Chercher la fiche d'un Héro")
+                        a.button.connexion(href="#")="Connexion"
+                        a.button.orange(href="#")="Acheter maintenant"
+            .ange
+                each val, index in spells
+                    if index === 0
+                        - var def = "checked"
+                    else
+                        - var def = "false"
+                    input(type="radio", name="currSpell", id=`inp_${index}`, checked=`${def}`)
+                h2.title="Sean"
+                .dynamic_bg
+                    each val, index in spells
+                        div(class=`bg_${index} spellbg`,data_spell=`${index}`)
+                            img(src=`skill_${val.name}.png`)
+                p.ange_description="Spell name"
+                ul.list.list_rounded
+                    each val, index in spells
+                        li
+                            label.list_link(for=`inp_${index}`)
+                                .label_content
+                                    img(src=`icon_${val.name}.png`, alt=`${val.name}`)
+        main.main
+            input.radio#section_generalites(type="radio", name="section", checked)
+            input.radio#section_histoire(type="radio", name="section")
+            .dynamic_bg
+                .container
+                    h2.hidden="Main content"
+                    .hero
+                        label.button.blue(for="section_generalites")="Généralités"
+                        label.button.blue(for="section_histoire")="Histoire"
+                        .hero_generalites
+                            h3.title.role="Rôle"
+                            p.role_name="Full stack"
+                                span.indice="+"
+                            blockquote.role_quote="En tant que développeur full stack, Sean est capable de vaincre tous les défis de ses clients, à l'aide de son unique arme, UN CLAVIER, il peut venir à bout d'un site web en un temps record !<br>Rare sont ceux qui ont pû voir un projet le forcer à jeter les armes"
+                            .difficulty
+                                h3.title="Talent"
+                                .stars
+                                    .one.star_on
+                                    .two.star_on
+                                    .three.star_on
+                                    .four.star_on
+                                    .five.star_off
+                            .capacity
+                                h3.title="Capacité"
+                                ul.list.list_vertical
+                                    each val, index in spells
+                                        li.spell
+                                            .left.img_container
+                                                img(src=`icon_${val.name}.png`, alt=`cap ${index}`)
+                                            .left
+                                                strong.spell_name=val.name
+                                                p.spell_desc=val.desc
+                        .hero_histoire
+                            h3.title="Biographie"
+                            ul.list.vertical_list
+                                li.hero_info
+                                    .hero_id
+                                        p="Identité : Sean Ferrara, Âge : 23 ans"
+                                li.hero_info
+                                    .hero_occupation
+                                        p="Profession : Étudiant en 2e année à HEPL"
+                                li.hero_info
+                                    .hero_location
+                                        p="Base d'opération : Angleur, Belgique"
+                                li.hero_info
+                                    .hero_affiliation
+                                        p="Affiliation : Aucune"
+                            .hero_bio
+                                p.hero_bio_quote="« Gloire au code spaghetti »"
+                                .hero_bio_bigtext
+                                    p.paragraph="Véritable ange gardien pour ceux qu’elle prend en charge, le docteur Angela Ziegler est une soignante hors pair, une scientifique brillante et une fervente partisane de la paix."
+                                    p.paragraph="Ziegler a gravi les échelons jusqu’à la direction du service de chirurgie d’un grand hôpital suisse avant de lancer une percée révolutionnaire dans le domaine des nanotechnologies appliquées qui a amélioré de façon radicale le traitement des maladies et des traumatismes potentiellement mortels. C’est grâce à ce domaine d’expertise qu’elle a attiré l’attention d’Overwatch."
+                                    p.paragraph="Privée de ses parents par la guerre, Angela Ziegler était opposée à l’approche militariste de l’organisation dans le maintien de la paix mondiale. Mais elle finit par reconnaître qu’Overwatch lui offrait l’opportunité de sauver des vies à bien plus grande échelle. En devenant responsable de la recherche médicale d’Overwatch, Angela cherchait à optimiser l’application de ses travaux pour dispenser des soins sur le terrain dans les situations de crise. Ses recherches se concrétisèrent sous la forme de l’armure de traitement des urgences Valkyrie, qu’elle pilota elle-même lors de nombreuses missions d’Overwatch."
+                                    p.paragraph="Malgré ses contributions significatives, elle était fréquemment en désaccord avec ses supérieurs et les objectifs globaux de l’organisation. Après la dissolution d’Overwatch, Ziegler put se consacrer à apporter de l’aide aux victimes de guerre."
+                                    p.paragraph="Même si elle passe maintenant l’essentiel de son temps à soigner les victimes et les réfugiés dans les zones de crise aux quatre coins du globe, on peut encore compter sur le Dr Ziegler et sur son armure Valkyrie quand des innocents sont en péril."
+            .container
+                    .media
+                        h2.title="Média associés"
+                        ul.medias
+                            each media, index in Medias
+                                li.medias_element
+                                    a.link(href="#")
+                                        img(src=`${media}`, alt=`${index}`)
+                                        .media_text=`${index}`
+            .hero_other
+                .container
+                    h3.title="Sélectionnez un héros"
+                    each Heroes, index in Classes
+                        .hero_other_container
+                            .hero_other_separator
+                                .hero_separator
+                                p.hero_classname=`${index}`
+                                .hero_separator
+                            each hero, index in Heroes
+                                .hero_other_hero
+                                    .hero_other_hero_portrait
+                                        img.hero_other_hero_image(src=`${hero}`,alt=`${index}`)
+                                    p.hero_other_hero_text=`${index}`
+        footer.footer
+            h2.hidden="Pied de page"
+            .footer_gray
+                a.button.orange(href="#")="Acheter le jeu"
+            .footer_gray
+                h3.title="Restez connecté"
+                nav.navigation.transparent
+                    ul.socials
+                        li.socials_icon.facebook
+                        li.socials_icon.twitter
+                        li.socials_icon.youtube
+                        li.socials_icon.instagram
+            .lang
+                input.input_lang
+            div
+                img(src="bliz-ent.png", alt="Logo Blizzard", width="135", height="80")
+            ul.links
+                li
+                    a.link(href="#")="Emplois"
+                li
+                    a.link(href="#")="À propos de nous"
+                li
+                    a.link(href="#")="Assistance"
+                li
+                    a.link(href="#")="Nous contacter"
+                li
+                    a.link(href="#")="Presse"
+                li
+                    a.link(href="#")="Api"
+            .footer_notes
+                p.color-gray="Ⓒ2019 BLIZZARD ENTERTAINMENT, INC. TOUS DROITS RÉSERVÉS."
+                p.color-gray="Toutes les marques citées appartiennent à leur propriétaire."
+                p
+                    a.link(href="#")="Confidentialité en ligne"
+                    a.link(href="#")="Mentions légales"
+                img(src="pegi12.png", alt="Pegi 12")
+                img(src="violence.png", alt="US violence")
+
